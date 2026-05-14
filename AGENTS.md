@@ -1,43 +1,31 @@
 # Agents and Tools
 
-This repository contains a Telegram bot for receiving and managing job applications from contractors.
+This repository contains a modular Telegram bot for receiving and managing job applications from contractors.
 
 ## Project Overview
-- This is a Telegram bot written in [Python/Node].
-- It handles user messages, reactions, and applications.
-- The bot is designed for receiving job applications for a finisher / contractor.
+- **Core:** Python bot using `pyTelegramBotAPI`.
+- **Structure:** Modularized logic in the `src/` directory.
+- **Purpose:** Handling user applications for finishing and construction works.
 
 ## Build and Run Commands
-- How to install dependencies:
-  - `pip install -r requirements.txt` or `npm install`
-- How to run the bot:
-  - `python bot.py` or `node bot.js`
-- How to run in production (if any):
-  - `pm2 start bot.js` or systemd service.
+- **Install dependencies:** `pip install -r requirements.txt`
+- **Run the bot:** `python main.py`
+- **Setup:** Copy `.env.example` to `.env` and fill in your credentials.
 
-## Environment Variables
-- List of required env vars:
-  - `BOT_TOKEN` — bot token from @BotFather.
-  - `ADMIN_IDS` — comma-separated list of admin user IDs.
-  - `DATABASE_URL` — connection to database (if used).
-- Example file: `.env.example`.
+## Directory Structure
+- `main.py`: Entry point and message handlers.
+- `src/config.py`: Environment variable loading and global constants.
+- `src/data.py`: Price lists and material data.
+- `src/keyboards.py`: Telegram markup generation.
+- `src/utils.py`: Spam protection, session management, and file utilities.
 
-## Code Style
-- Use clear function names.
-- Handle all exceptions in Telegram handlers.
-- Use async/await for Node or asyncio for Python.
-- Keep code DRY and follow pep8 if Python.
+## Maintenance
+- **Prices & Materials:** Update `src/data.py` to change price lists or calculator parameters.
+- **UI/Texts:** Modify `main.py` for message texts and `src/keyboards.py` for buttons.
+- **Logs:** Check `bot.log` for runtime issues.
 
-## Security
-- Do not store API tokens in code.
-- Handle user input carefully.
-- Validate all data before using it.
-
-## Deployment
-- Bot runs on a server with systemd or PM2.
-- Logs are stored in `/var/log/bot/`.
-
-## How to use Jules
-- Let Jules update the bot logic, fix bugs, migrate to new API, add new features.
-- Jules should not change environment variables or secrets.
-- Always check diffs before merging.
+## Guidelines for Jules
+- Maintain the modular structure.
+- Always add Russian comments to explain the logic of new code.
+- Ensure all new features are verified with smoke tests.
+- Do not commit actual secrets to `.env`.
