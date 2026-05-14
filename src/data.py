@@ -1,0 +1,66 @@
+# Словарь с ценами
+PRICES = {
+    # Ремонтные работы
+    "косметический ремонт квартиры": {"work_price": 5000, "unit": "м²", "material": "комплекс", "usage": 1},
+    "капитальный ремонт квартиры": {"work_price": 15000, "unit": "м²", "material": "комплекс", "usage": 1},
+    "дизайнерский ремонт квартир": {"work_price": 30000, "unit": "м²", "material": "комплекс", "usage": 1},
+    "капитальный ремонт дома": {"work_price": 15000, "unit": "м²", "material": "комплекс", "usage": 1},
+    "косметический ремонт дома": {"work_price": 5000, "unit": "м²", "material": "комплекс", "usage": 1},
+
+    # Подготовительные работы
+    "шпатлевание": {"work_price": 250, "unit": "м²", "material": "шпаклевка", "usage": 1.5},
+    "штукатурка": {"work_price": 500, "unit": "м²", "material": "гипс", "usage": 10},
+    "грунтовка": {"work_price": 100, "unit": "м²", "material": "грунт", "usage": 0.1},
+    "шлифовка": {"work_price": 100, "unit": "м²", "material": "сетка", "usage": 0.3},
+    "демонтаж обоев": {"work_price": 100, "unit": "м²", "material": "-", "usage": 0},
+
+    "покраска валиком один слой": {"work_price": 200, "unit": "м²", "material": "краска", "usage": 0.15},
+    "обои флизелин винил без рисунка": {"work_price": 200, "unit": "м²", "material": "клей", "usage": 0.3},
+    "обои флизелин винил с рисунком": {"work_price": 250, "unit": "м²", "material": "клей", "usage": 0.4},
+    "бумажные обои": {"work_price": 500, "unit": "м²", "material": "клей", "usage": 0.2},
+    "текстильные обои": {"work_price": 1000, "unit": "м²", "material": "клей", "usage": 0.5},
+    "стеклообои": {"work_price": 1000, "unit": "м²", "material": "клей", "usage": 0.6},
+    "жидкие обои": {"work_price": 500, "unit": "м²", "material": "смесь", "usage": 1.2},
+    "колеровка краски": {"work_price": 100, "unit": "м²", "material": "колер", "usage": 0.05},
+    "кладка газобетонных блоков": {"work_price": 600, "unit": "м²", "material": "клей", "usage": 5},
+    "кладка кирпича": {"work_price": 400, "unit": "м²", "material": "раствор", "usage": 7},
+    "кладка пеноблока": {"work_price": 450, "unit": "м²", "material": "клей", "usage": 4.5},
+    "облицовка гипсокартоном": {"work_price": 1000, "unit": "м²", "material": "профиль+ГКЛ", "usage": 1.1},
+    "работа с серпянкой": {"work_price": 60, "unit": "м.п.", "material": "лента", "usage": 1},
+    "укладка плитки": {"work_price": 1000, "unit": "м²", "material": "клей", "usage": 4},
+    "чистый шов плитка": {"work_price": 1000, "unit": "м.п.", "material": "затирка", "usage": 0.1},
+    "вырезы в плитке": {"work_price": 1500, "unit": "шт", "material": "-", "usage": 0},
+    "укладка плитки по рисунку": {"work_price": 7000, "unit": "м²", "material": "клей", "usage": 5},
+    "зарезка плитки на 45°": {"work_price": 1500, "unit": "м.п.", "material": "-", "usage": 0},
+    "установка смесителя": {"work_price": 500, "unit": "шт", "material": "уплотнитель", "usage": 1},
+    "прокладка труб водоснабжения": {"work_price": 500, "unit": "м.п.", "material": "трубы", "usage": 1},
+    "штробление под сантехнику": {"work_price": 700, "unit": "м.п.", "material": "-", "usage": 0},
+    "установка акриловой ванны": {"work_price": 3000, "unit": "шт", "material": "пеня", "usage": 1},
+    "установка розетки": {"work_price": 400, "unit": "шт", "material": "-", "usage": 0},
+    "установка выключателя": {"work_price": 600, "unit": "шт", "material": "-", "usage": 0},
+    "разводка электрики": {"work_price": 500, "unit": "м²", "material": "кабель", "usage": 3},
+    "штробление под электропроводку": {"work_price": 600, "unit": "м.п.", "material": "-", "usage": 0},
+    "установка маяков": {"work_price": 120, "unit": "м.п.", "material": "маяки", "usage": 1},
+    "услуги грузчика": {"work_price": 1000, "unit": "час", "material": "-", "usage": 0},
+    "уборка": {"work_price": 4000, "unit": "объект", "material": "-", "usage": 0},
+    "удаление грибков": {"work_price": 3000, "unit": "м²", "material": "химия", "usage": 0.5}
+}
+
+# Словарь для калькулятора материалов
+MATERIALS = {
+    "плитка": {
+        "20x30 см": {"size": 0.06, "waste": 10},
+        "30x30 см": {"size": 0.09, "waste": 10},
+        "40x40 см": {"size": 0.16, "waste": 10}
+    },
+    "кирпич": {
+        "одинарный": {"count": 51, "waste": 5},
+        "полуторный": {"count": 39, "waste": 5},
+        "двойной": {"count": 26, "waste": 5}
+    },
+    "газоблок": {
+        "600x200x300": {"count": 6.67, "waste": 5},
+        "600x250x300": {"count": 5.56, "waste": 5},
+        "600x200x400": {"count": 5.00, "waste": 5}
+    }
+}
