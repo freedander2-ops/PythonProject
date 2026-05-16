@@ -1,31 +1,17 @@
-# Agents and Tools
-
-This repository contains a modular Telegram bot for receiving and managing job applications from contractors.
+# Agents and Tools - PythonProject
 
 ## Project Overview
-- **Core:** Python bot using `pyTelegramBotAPI`.
-- **Structure:** Modularized logic in the `src/` directory.
-- **Purpose:** Handling user applications for finishing and construction works.
+This is a high-quality, modular Python platform for Telegram-based automation.
 
-## Build and Run Commands
-- **Install dependencies:** `pip install -r requirements.txt`
-- **Run the bot:** `python main.py`
-- **Setup:** Copy `.env.example` to `.env` and fill in your credentials.
+## Rules for Agents
+- **Preserve Architecture:** Follow the `/bot`, `/core`, `/services`, `/utils` structure.
+- **Lightweight Handlers:** Keep UI logic in `bot/` and business logic in `services/`.
+- **Russian Comments:** Maintain comments in Russian for readability and context.
+- **Logging:** Use the logger from `core.config` for consistency.
 
-## Directory Structure
-- `main.py`: Entry point and message handlers.
-- `src/config.py`: Environment variable loading and global constants.
-- `src/data.py`: Price lists and material data.
-- `src/keyboards.py`: Telegram markup generation.
-- `src/utils.py`: Spam protection, session management, and file utilities.
+## Capability Extension
+To add a new feature (e.g., OSINT, AI), create a new service in `services/` and a corresponding handler in `bot/`.
 
-## Maintenance
-- **Prices & Materials:** Update `src/data.py` to change price lists or calculator parameters.
-- **UI/Texts:** Modify `main.py` for message texts and `src/keyboards.py` for buttons.
-- **Logs:** Check `bot.log` for runtime issues.
-
-## Guidelines for Jules
-- Maintain the modular structure.
-- Always add Russian comments to explain the logic of new code.
-- Ensure all new features are verified with smoke tests.
-- Do not commit actual secrets to `.env`.
+## Deployment
+- Use systemd or PM2 to manage `run.py`.
+- Ensure `.env` is properly set up on the server.
